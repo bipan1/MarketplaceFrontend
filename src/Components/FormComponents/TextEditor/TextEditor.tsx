@@ -3,7 +3,7 @@ import ReactQuill from 'react-quill';
 import 'quill/dist/quill.snow.css';
 
 export default function MyEditor() {
-    const [value, setValue] = React.useState('');
+    const [value, setValue] = React.useState('\n\n\n\n\n');
 
     const modules = {
         toolbar: [
@@ -41,7 +41,7 @@ export default function MyEditor() {
             modules={modules}
             formats={formats}
             theme="snow"
-            // footer={[]}
+            placeholder='Enter the description here'
         />
     );
 }

@@ -1,10 +1,12 @@
 import { MdKeyboardArrowRight } from 'react-icons/md'
 
-type Props = {}
+type Props = {
+  handleChangeCategory : () => void;
+}
 
-const CategoryForm = (props: Props) => {
+const CategoryForm = ({handleChangeCategory}: Props) => {
   return (
-    <div>
+    <div onClick={handleChangeCategory}>
         <div className='rounded-md border !border-gray-300 p-2 mb-4 hover:cursor-pointer hover:border-blue-400'>
                 <div className='flex justify-between '>
                     <div>

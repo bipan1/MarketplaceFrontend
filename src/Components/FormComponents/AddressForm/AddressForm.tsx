@@ -37,8 +37,8 @@ const AddressForm = ({classNames}: Props) => {
 
 
   return (
-    <div className="flex items-center bg-white pl-2">
-      <FaMapMarkerAlt size={25} className="text-green-600 text-lg mr-3" />
+    <div className="relative flex items-center bg-white">
+      <FaMapMarkerAlt size={24} className="text-green-600 text-lg absolute pointer-events-none pl-2" />
       <input value={address} className={`${classNames} outline-none`} ref={inputRef} />
     </div>
         

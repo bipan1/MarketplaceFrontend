@@ -26,7 +26,7 @@ const props: UploadProps = {
 };
 
 const ImageForm: React.FC = () => (
-    <div className='mb-6'>
+    <div className='mb-2'>
         <p className='text-2xl font-bold'>Photos</p>
         <p className='mb-4'>Uploaded 0/15 Photos</p>
 

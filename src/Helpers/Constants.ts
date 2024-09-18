@@ -9,16 +9,16 @@ export const categories : categoryType[] = [
         value: 'jobs'
     },
     {
-        label: 'Community',
-        value: 'community'
+        label: 'Household',
+        value: 'household'
+    },
+    {
+        label: 'Room and Real Estate',
+        value: 'rooms'
     },
     {
         label: 'Clothing and Jewellery',
         value: 'clothingjewellery'
-    },
-    {
-        label: 'Baby and Children',
-        value: 'baby'
     },
     {
         label: 'Cars',
@@ -27,14 +27,6 @@ export const categories : categoryType[] = [
     {
         label: 'Electronics and Computer',
         value: 'electronics'
-    },
-    {
-        label: 'Festives',
-        value: 'festives'
-    },
-    {
-        label: 'Room and Real Estate',
-        value: 'rooms'
     },
     {
         label: 'Service for hire',

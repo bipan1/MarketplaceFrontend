@@ -12,7 +12,7 @@ const ContactForm = (props: Props) => {
                     className='!mb-0'
                     name="contactnumber"
                 >
-                    <Input className='!border-0' size='large'/>
+                    <Input className='!border-0' size='large' placeholder='Enter contact number'/>
                 </Form.Item>
                 <div className='border-t border-gray-300 p-2  flex justify-between'>
                     <p className='text-md font-bold'>Show this number in the ad?</p>
