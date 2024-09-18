@@ -15,7 +15,7 @@ import SubmitForm from '../../Components/FormComponents/SubmitForm/SubmitForm';
 
 type Props = {}
 
-const CreateJob = (props: Props) => {
+const Createclothing = (props: Props) => {
     const [form] = Form.useForm();
     const [loading, setLoading] = useState<boolean>(false);
 
@@ -30,40 +30,23 @@ const CreateJob = (props: Props) => {
 
   return (
     <div className='mx-auto w-2/5 mt-10 mb-10'>
-        <p className='text-2xl font-bold mb-4'>About the job</p>
+        <p className='text-2xl font-bold mb-4'>Title, Category and Price</p>
         <Form form={form} layout='vertical' onFinish={handleSubmit} className=''>
 
             <TitleForm />
-            <CategoryForm category="Create a job" handleChangeCategory={() => navigate("/create")}/>
+            <CategoryForm category="Clothing and Jewellery" handleChangeCategory={() => navigate("/create")}/>
 
             <Form.Item
-                name="jobType"
-                label={<p className='text-lg '>Job Type</p>}
+                name="price"
+                label={<p className='text-lg '>Your price</p>}
                 required={true}
             >
-                <Select placeholder="Select job type" className='min-h-12' options={jobTypes} size='large'/>
-            </Form.Item>
-
-            <p className='text-2xl font-bold mb-4'>Salary Information</p>
-            <Form.Item
-                name="salaryType"
-                label={<p className='text-lg'>Salary Type</p>}
-                required={true}
-            >
-                <Select className='min-h-12' placeholder="Select Salary Type" options={salaryTypes} size='large'/>
-            </Form.Item>
-
-            <Form.Item
-                name="salary"
-                label={<p className='text-lg'>Salary</p>}
-                required={true}
-            >
-                <Input placeholder='Enter Salary' className='min-h-12' size='large'/>
+                <Input placeholder="Enter your price" className='min-h-12' size='large'/>
             </Form.Item>
 
             <ImageForm form={form}/>
             
-            <p className='text-2xl font-bold mb-4'>Job Description</p>
+            <p className='text-2xl font-bold mb-4'>Description</p>
             <Form.Item
                 name="description"
                 required={true}
@@ -88,4 +71,4 @@ const CreateJob = (props: Props) => {
   )
 }
 
-export default CreateJob
+export default Createclothing

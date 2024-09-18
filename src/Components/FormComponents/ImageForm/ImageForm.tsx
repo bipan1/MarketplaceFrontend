@@ -1,36 +1,36 @@
 import React from 'react';
 import { InboxOutlined } from '@ant-design/icons';
 import type { UploadProps } from 'antd';
-import { message, Upload } from 'antd';
+import { Form, Upload } from 'antd';
 
 const { Dragger } = Upload;
 
 const props: UploadProps = {
   name: 'file',
   multiple: true,
-  action: 'https://660d2bd96ddfa2943b33731c.mockapi.io/api/upload',
-  onChange(info) {
-    const { status } = info.file;
-    if (status !== 'uploading') {
-      console.log(info.file, info.fileList);
-    }
-    if (status === 'done') {
-      message.success(`${info.file.name} file uploaded successfully.`);
-    } else if (status === 'error') {
-      message.error(`${info.file.name} file upload failed.`);
-    }
+  beforeUpload() {
+    return false;
   },
   onDrop(e) {
-    console.log('Dropped files', e.dataTransfer.files);
   },
 };
 
-const ImageForm: React.FC = () => (
+type Props = {
+  form : any;
+}
+
+const ImageForm: React.FC<Props> = ({form} : Props) => (
+  <Form.Item
+      name="images"
+  >
     <div className='mb-2'>
         <p className='text-2xl font-bold'>Photos</p>
         <p className='mb-4'>Uploaded 0/15 Photos</p>
 
-        <Dragger {...props}>
+        <Dragger {...props} onChange={(info) => {
+          const fileList = info.fileList.map(file => file.originFileObj)
+          form.setFieldsValue({images : fileList})
+        }}>
             <p className="ant-upload-drag-icon">
                 <InboxOutlined color='green' />
             </p>
@@ -41,6 +41,8 @@ const ImageForm: React.FC = () => (
             </p>
         </Dragger>
     </div>
+  </Form.Item>
+    
   
 );
 

@@ -4,10 +4,10 @@ import { FaMapMarkerAlt } from 'react-icons/fa';
 
 type Props = {
     classNames : string
+    form? : any;
 }
 
-const AddressForm = ({classNames}: Props) => {
-    const [address, setAddress] = useState<string>();
+const AddressForm = ({classNames, form}: Props) => {
     const inputRef = useRef<HTMLInputElement>(null);
 
     const { isLoaded, loadError } = useLoadScript({
@@ -32,14 +32,15 @@ const AddressForm = ({classNames}: Props) => {
         if (!isLoaded) return;
         const addressComponents = address.getPlace();
         const formattedAddress = addressComponents.formatted_address;
-        setAddress(formattedAddress);
+        console.log(formattedAddress)
+        form.setFieldsValue({address : formattedAddress})
     };
 
 
   return (
     <div className="relative flex items-center bg-white">
       <FaMapMarkerAlt size={24} className="text-green-600 text-lg absolute pointer-events-none pl-2" />
-      <input value={address} className={`${classNames} outline-none`} ref={inputRef} />
+      <input className={`${classNames} outline-none`} ref={inputRef} />
     </div>
         
   )

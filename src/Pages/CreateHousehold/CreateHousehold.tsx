@@ -15,7 +15,7 @@ import SubmitForm from '../../Components/FormComponents/SubmitForm/SubmitForm';
 
 type Props = {}
 
-const CreateJob = (props: Props) => {
+const CreateHousehold = (props: Props) => {
     const [form] = Form.useForm();
     const [loading, setLoading] = useState<boolean>(false);
 
@@ -30,40 +30,37 @@ const CreateJob = (props: Props) => {
 
   return (
     <div className='mx-auto w-2/5 mt-10 mb-10'>
-        <p className='text-2xl font-bold mb-4'>About the job</p>
+        <p className='text-2xl font-bold mb-4'>About the household item</p>
         <Form form={form} layout='vertical' onFinish={handleSubmit} className=''>
 
             <TitleForm />
-            <CategoryForm category="Create a job" handleChangeCategory={() => navigate("/create")}/>
+            <CategoryForm category="Post a household item" handleChangeCategory={() => navigate("/create")}/>
 
             <Form.Item
-                name="jobType"
-                label={<p className='text-lg '>Job Type</p>}
+                name="price"
+                label={<p className='text-lg '>Your price</p>}
                 required={true}
             >
-                <Select placeholder="Select job type" className='min-h-12' options={jobTypes} size='large'/>
+                <Input placeholder="Enter your price" className='min-h-12' size='large'/>
             </Form.Item>
+            
+            <div className='grid grid-cols-12 gap-4 mb-4'>
+                <div className='col-span-6'>
+                    <p className=' text-lg mb-2'>Condition</p>
+                    <div className='border min-h-12 border-gray-300 rounded-lg text-lg grid grid-cols-12'>
+                        <p className='text-center p-3 col-span-6 border-r border-gray-300 hover:bg-green-100 hover:cursor-pointer'>Used</p>
+                        <p className='text-center p-3 col-span-6 hover:bg-green-100 hover:cursor-pointer'>New</p>
+                    </div>
+                </div>
 
-            <p className='text-2xl font-bold mb-4'>Salary Information</p>
-            <Form.Item
-                name="salaryType"
-                label={<p className='text-lg'>Salary Type</p>}
-                required={true}
-            >
-                <Select className='min-h-12' placeholder="Select Salary Type" options={salaryTypes} size='large'/>
-            </Form.Item>
+                <div className='col-span-6'>
 
-            <Form.Item
-                name="salary"
-                label={<p className='text-lg'>Salary</p>}
-                required={true}
-            >
-                <Input placeholder='Enter Salary' className='min-h-12' size='large'/>
-            </Form.Item>
+                </div>
+            </div>
 
             <ImageForm form={form}/>
             
-            <p className='text-2xl font-bold mb-4'>Job Description</p>
+            <p className='text-2xl font-bold mb-4'>Description</p>
             <Form.Item
                 name="description"
                 required={true}
@@ -88,4 +85,4 @@ const CreateJob = (props: Props) => {
   )
 }
 
-export default CreateJob
+export default CreateHousehold

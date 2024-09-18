@@ -2,8 +2,10 @@ import React from 'react';
 import ReactQuill from 'react-quill';
 import 'quill/dist/quill.snow.css';
 
-export default function MyEditor() {
-    const [value, setValue] = React.useState('\n\n\n\n\n');
+type Props = {
+    form : any;
+}
+export default function MyEditor({form} : Props) {
 
     const modules = {
         toolbar: [
@@ -17,6 +19,10 @@ export default function MyEditor() {
             ['clean'],
         ],
     };
+
+    const handleChange = (changeValue: string) => {
+        form.setFieldsValue({description : changeValue})
+    }
 
     const formats = [
         'header',
@@ -36,12 +42,11 @@ export default function MyEditor() {
 
     return (
         <ReactQuill
-            value={value}
-            onChange={setValue}
+            onChange={handleChange}
             modules={modules}
             formats={formats}
             theme="snow"
-            placeholder='Enter the description here'
+            placeholder='Enter the description'
         />
     );
 }

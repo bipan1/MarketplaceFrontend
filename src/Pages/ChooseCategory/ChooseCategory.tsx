@@ -8,7 +8,7 @@ const ChooseCategory = (props: Props) => {
     const navigate = useNavigate();
 
     const handleCreate = (category: string) => {
-        navigate('/create-job')
+        navigate(`/create-${category}`)
     }
 
     return (

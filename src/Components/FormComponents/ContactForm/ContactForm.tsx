@@ -16,8 +16,8 @@ const ContactForm = (props: Props) => {
                 </Form.Item>
                 <div className='border-t border-gray-300 p-2  flex justify-between'>
                     <p className='text-md font-bold'>Show this number in the ad?</p>
-                    <Form.Item className='mb-0'  valuePropName="checked">
-                        <Switch />
+                    <Form.Item className='mb-0' name="showNumberAd"  valuePropName="showNumberAd">
+                        <Switch defaultValue={false} />
                     </Form.Item>
                 </div>
             </div>

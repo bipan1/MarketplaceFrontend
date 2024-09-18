@@ -1,5 +1,5 @@
 import { Button, Form, Input, Select } from 'antd'
-import { jobTypes, salaryTypes } from '../../Helpers/Constants';
+import { bathRoomTypes, bedRoomTypes, durationTypes, jobTypes, propertyTypes, rentTypes, salaryTypes } from '../../Helpers/Constants';
 import MyEditor from '../../Components/FormComponents/TextEditor/TextEditor';
 import AddressForm from '../../Components/FormComponents/AddressForm/AddressForm';
 import ContactForm from '../../Components/FormComponents/ContactForm/ContactForm';
@@ -15,7 +15,7 @@ import SubmitForm from '../../Components/FormComponents/SubmitForm/SubmitForm';
 
 type Props = {}
 
-const CreateJob = (props: Props) => {
+const CreateRooms = (props: Props) => {
     const [form] = Form.useForm();
     const [loading, setLoading] = useState<boolean>(false);
 
@@ -30,40 +30,68 @@ const CreateJob = (props: Props) => {
 
   return (
     <div className='mx-auto w-2/5 mt-10 mb-10'>
-        <p className='text-2xl font-bold mb-4'>About the job</p>
+        <p className='text-2xl font-bold mb-4'>About the Real Estate</p>
         <Form form={form} layout='vertical' onFinish={handleSubmit} className=''>
 
             <TitleForm />
-            <CategoryForm category="Create a job" handleChangeCategory={() => navigate("/create")}/>
+            <CategoryForm category='Create an Real Estate Ad' handleChangeCategory={() => navigate("/create")}/>
+
+            <div className='grid grid-cols-12 gap-2'>
+                <Form.Item
+                    name="rentType"
+                    label={<p className='text-lg '>Enter your price</p>}
+                    required={true}
+                    className='col-span-8'
+                >
+                    <Input placeholder="Enter your price" className='min-h-12' size='large'/>
+                </Form.Item>
+
+                <Form.Item
+                    name="rentType"
+                    label={<p className='text-lg '>Duration</p>}
+                    required={true}
+                    className='col-span-4'
+                >
+                    <Select placeholder="Select duration type" className='min-h-12' options={durationTypes} size='large'/>
+                </Form.Item>
+            </div>
 
             <Form.Item
-                name="jobType"
-                label={<p className='text-lg '>Job Type</p>}
+                name="rentType"
+                label={<p className='text-lg '>Rent Type</p>}
                 required={true}
             >
-                <Select placeholder="Select job type" className='min-h-12' options={jobTypes} size='large'/>
+                <Select placeholder="Select rent type" className='min-h-12' options={rentTypes} size='large'/>
             </Form.Item>
 
-            <p className='text-2xl font-bold mb-4'>Salary Information</p>
+            <p className='text-2xl font-bold mb-4'>Property Information</p>
             <Form.Item
-                name="salaryType"
-                label={<p className='text-lg'>Salary Type</p>}
+                name="propertyType"
+                label={<p className='text-lg'>Property Type</p>}
                 required={true}
             >
-                <Select className='min-h-12' placeholder="Select Salary Type" options={salaryTypes} size='large'/>
+                <Select className='min-h-12' placeholder="Select property type" options={propertyTypes} size='large'/>
             </Form.Item>
 
             <Form.Item
-                name="salary"
-                label={<p className='text-lg'>Salary</p>}
+                name="propertyType"
+                label={<p className='text-lg'>Bedrooms</p>}
                 required={true}
             >
-                <Input placeholder='Enter Salary' className='min-h-12' size='large'/>
+                <Select className='min-h-12' placeholder="Select number of bedrooms" options={bedRoomTypes} size='large'/>
+            </Form.Item>
+
+            <Form.Item
+                name="propertyType"
+                label={<p className='text-lg'>Bathrooms</p>}
+                required={true}
+            >
+                <Select className='min-h-12' placeholder="Select number of bathrooms" options={bathRoomTypes} size='large'/>
             </Form.Item>
 
             <ImageForm form={form}/>
             
-            <p className='text-2xl font-bold mb-4'>Job Description</p>
+            <p className='text-2xl font-bold mb-4'>Description</p>
             <Form.Item
                 name="description"
                 required={true}
@@ -88,4 +116,4 @@ const CreateJob = (props: Props) => {
   )
 }
 
-export default CreateJob
+export default CreateRooms

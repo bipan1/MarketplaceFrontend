@@ -1,3 +1,4 @@
+
 export type JobPost = {
     title : string;
     jobType :string;
@@ -7,4 +8,5 @@ export type JobPost = {
     address : string;
     contactNumber: string;
     showNumberAd : boolean;
+    images : File[];
 }

@@ -18,7 +18,7 @@ export const categories : categoryType[] = [
     },
     {
         label: 'Clothing and Jewellery',
-        value: 'clothingjewellery'
+        value: 'clothing'
     },
     {
         label: 'Cars',
@@ -78,4 +78,98 @@ export const salaryTypes = [
         label: 'Commssion',
         value : 'commission'
     },
+]
+
+
+export const rentTypes = [
+    {
+        label : 'Lease Transfer',
+        value : 'leasetransfer'
+    },
+    {
+        label : 'House Share',
+        value : 'houseshare'
+    },
+    {
+        label : 'Room share',
+        value : 'roomshare'
+    },
+    {
+        label : 'Property for Rent',
+        value : 'propertyrent'
+    }
+
+]
+
+export const propertyTypes = [
+    {
+        label : 'Apartment or unit',
+        value : 'apartment'
+    },
+    {
+        label : 'House',
+        value : 'house'
+    },
+    {
+        label : 'Townhouse',
+        value : 'townhouse'
+    },
+    {
+        label : 'Other Rental',
+        value : 'other'
+    },
+]
+
+export const bedRoomTypes = [
+    {
+        label : 'Studio',
+        value : 'studio'
+    },
+    {
+        label : '1 Bedroom',
+        value : '1'
+    },
+    {
+        label : '2 Bedrooms',
+        value : '2'
+    },
+    {
+        label : '3 Bedrooms',
+        value : '3'
+    },
+    {
+        label : '4 Bedrooms',
+        value : '4'
+    },
+];
+
+export const bathRoomTypes = [
+    {
+        label : 'One',
+        value : '1'
+    },
+    {
+        label : 'Two',
+        value : '3'
+    },
+    {
+        label : 'Three or more',
+        value : '3'
+    },
+
+];
+
+export const durationTypes = [
+    {
+        label : 'Per week',
+        value : 'week'
+    },
+    {
+        label : 'Per Fortnight',
+        value : 'fortnight'
+    },
+    {
+        label : 'Per Month',
+        value : 'month'
+    }
 ]

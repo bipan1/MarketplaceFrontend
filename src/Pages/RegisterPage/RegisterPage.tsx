@@ -57,7 +57,7 @@ const RegisterPage = (props: Props) => {
           </Form.Item>
 
           <Form.Item>
-            <Button htmlType='submit' className="w-full h-12 !bg-green-900 !text-white  mb-3">
+            <Button htmlType='submit' className="w-full h-12 !bg-green-600 !text-white  mb-3">
               <span className="ml-3">Sign Up</span>
             </Button>
           </Form.Item>
